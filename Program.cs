@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Diagnostics;
 
 namespace Assignment_2_3__
 {
@@ -6,7 +7,22 @@ namespace Assignment_2_3__
     {
         static void Main(string[] args)
         {
-            string filePath = "UserInfo.txt";
+
+            string filePath = @"C:\Users\rosss\source\repos\Assignment 2_3_!\bin\Debug\net8.0\UserInfo.txt";
+
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            File.WriteAllLines(filePath, lines);
+
+            Console.ReadLine();
+
+
+           /* string filePath = "UserInfo.txt";
 
             using (StreamWriter writer = new StreamWriter(filePath))
 
@@ -38,7 +54,7 @@ namespace Assignment_2_3__
             else
             {
                 Console.WriteLine("File not found");
-                            }
+                            } */
         }
     }
 }
